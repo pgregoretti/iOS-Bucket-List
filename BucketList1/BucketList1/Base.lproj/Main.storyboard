@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fJH-KW-dl0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--UVa Bucket List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BucketList1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QaR-di-fg3">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AYB-u1-yuh" customClass="TableViewCell" customModule="BucketList1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYB-u1-yuh" id="QZo-Gh-7vF">
+                                            <frame key="frameInset" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mkQ-ok-bLH" kind="show" identifier="editAction" id="MsQ-cn-mbJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aoc-dC-nqT"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="g81-SU-ACc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QaR-di-fg3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="12u-dQ-0qJ"/>
+                            <constraint firstItem="QaR-di-fg3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="TFI-G4-sup"/>
+                            <constraint firstItem="QaR-di-fg3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bo3-G5-6cB"/>
+                            <constraint firstAttribute="trailing" secondItem="QaR-di-fg3" secondAttribute="trailing" id="rSe-Dl-JLw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="UVa Bucket List" id="qYy-Iq-qcL">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="9hK-ZU-GzV">
+                            <connections>
+                                <segue destination="d3e-bh-CKA" kind="push" id="7kZ-p7-Hmy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="QaR-di-fg3" id="YYB-L2-ZLQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656.79999999999995" y="219.94002998500753"/>
+        </scene>
+        <!--Edit Item Info-->
+        <scene sceneID="qlf-Wr-gbp">
+            <objects>
+                <viewController storyboardIdentifier="DetailView" id="mkQ-ok-bLH" customClass="DetailViewController" customModule="BucketList1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJm-kf-Z3U"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qjn-Vi-j45"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fc7-SJ-Uby">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fbg-r5-AFo"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="822-Bv-OHq">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bucket List Goal" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xyf-4X-7W5">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="822-Bv-OHq" firstAttribute="top" secondItem="Xyf-4X-7W5" secondAttribute="bottom" constant="24" id="39K-IP-EXq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xyf-4X-7W5" secondAttribute="trailing" constant="66" id="JHY-wr-EbT"/>
+                            <constraint firstItem="Fbg-r5-AFo" firstAttribute="top" secondItem="822-Bv-OHq" secondAttribute="bottom" constant="8" symbolic="YES" id="L1o-LY-Eu6"/>
+                            <constraint firstItem="Xyf-4X-7W5" firstAttribute="top" secondItem="HJm-kf-Z3U" secondAttribute="bottom" constant="68" id="Xwf-Kx-6WS"/>
+                            <constraint firstItem="Xyf-4X-7W5" firstAttribute="leading" secondItem="fc7-SJ-Uby" secondAttribute="leadingMargin" constant="70" id="eUz-Hk-RV6"/>
+                            <constraint firstItem="Xyf-4X-7W5" firstAttribute="centerX" secondItem="822-Bv-OHq" secondAttribute="centerX" id="oGs-eb-bwh"/>
+                            <constraint firstItem="822-Bv-OHq" firstAttribute="centerX" secondItem="Fbg-r5-AFo" secondAttribute="centerX" id="x9w-EM-cuu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Item Info" id="WGR-qB-fGw">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="VAb-jT-o2m">
+                            <connections>
+                                <segue destination="oOP-3a-xnv" kind="unwind" unwindAction="prepareForUnwind:" id="9Bw-JU-Wae"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2Sl-aG-C9J">
+                            <connections>
+                                <segue destination="oOP-3a-xnv" kind="unwind" unwindAction="unwindEditToBucketListWithSender:" id="338-Mz-ka0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="completedSlider" destination="Fbg-r5-AFo" id="1f9-mA-Q5X"/>
+                        <outlet property="editTextField" destination="Xyf-4X-7W5" id="bwM-9c-7Ap"/>
+                        <outlet property="saveButton" destination="2Sl-aG-C9J" id="FYT-pb-jXH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KnH-wZ-vkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oOP-3a-xnv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2216.8000000000002" y="655.32233883058473"/>
+        </scene>
+        <!--Add New Item-->
+        <scene sceneID="NUl-5U-tHI">
+            <objects>
+                <viewController id="d3e-bh-CKA" customClass="AddItemViewController" customModule="BucketList1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oHr-Z1-Qtb"/>
+                        <viewControllerLayoutGuide type="bottom" id="szp-n1-ODi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SLe-8J-URD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDk-aJ-iC2">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2S-fa-zDS">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IDk-aJ-iC2" firstAttribute="top" secondItem="oHr-Z1-Qtb" secondAttribute="bottom" constant="42" id="Knc-cz-Rs2"/>
+                            <constraint firstItem="IDk-aJ-iC2" firstAttribute="leading" secondItem="j2S-fa-zDS" secondAttribute="leading" id="YYD-Wj-bWd"/>
+                            <constraint firstItem="IDk-aJ-iC2" firstAttribute="trailing" secondItem="j2S-fa-zDS" secondAttribute="trailing" id="dMt-CB-9Zv"/>
+                            <constraint firstItem="IDk-aJ-iC2" firstAttribute="centerX" secondItem="SLe-8J-URD" secondAttribute="centerX" id="sEF-6O-fgR"/>
+                            <constraint firstItem="j2S-fa-zDS" firstAttribute="top" secondItem="IDk-aJ-iC2" secondAttribute="bottom" constant="20" id="svj-Wx-KIB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Item" id="851-Ci-lfQ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="x8I-Tp-0Nm">
+                            <connections>
+                                <segue destination="gJa-eX-ttN" kind="unwind" unwindAction="prepareForUnwind:" id="SaF-xH-4kG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Y8J-5g-S8r">
+                            <connections>
+                                <segue destination="gJa-eX-ttN" kind="unwind" unwindAction="unwindToBucketListWithSender:" id="gfQ-wq-j1k"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="x8I-Tp-0Nm" id="2VF-sO-nED"/>
+                        </connections>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addItemTextField" destination="j2S-fa-zDS" id="WbA-5h-KD3"/>
+                        <outlet property="saveItemButton" destination="Y8J-5g-S8r" id="ApG-Gd-hpx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVT-d5-mGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gJa-eX-ttN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="-49"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wMV-79-jLV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fJH-KW-dl0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="n4y-Ta-KKU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zKR-Q9-ufi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WMo-FJ-y19"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7b-Le-DGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-150" y="220"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="beB-Lb-8zP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tOp-bQ-ktA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fUu-KC-V37"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kG4-GM-BYr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mkQ-ok-bLH" kind="relationship" relationship="rootViewController" id="YjN-Dn-NaL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4db-3i-Kwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="940"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MsQ-cn-mbJ"/>
+    </inferredMetricsTieBreakers>
+</document>
